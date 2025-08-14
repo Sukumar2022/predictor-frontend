@@ -1,0 +1,340 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.main{
+    height: auto;
+    width: 100%;
+}
+.navbar{
+    height: 10vh;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.navbar .logo{
+    margin: 0px 30px;
+    cursor: pointer;
+}
+.navbar .logo img{
+    height: 40px;
+    width: 150px;
+}
+.nav-Link{
+    margin: 0px 40px;
+    padding: 2px;
+}
+.nav-Link ul{
+    display: flex;
+    list-style: none;
+}
+.nav-Link a{
+    text-decoration: none;
+}
+.nav-Link ul li{
+    margin: 0px 4px;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 5px 10px;
+    position: relative;
+    text-align: center;
+    font-family: poppins;
+    font-size: 16px;
+}
+.nav-Link ul li::after{
+    content: '';
+    position: absolute;
+    height: 4px;
+    border-radius: 10px;
+    width: 19px;
+    top: 26px;
+    left: 10px;
+    background-color: rgb(143, 72, 236);
+    transition: .3s;
+}
+.nav-Link ul li:hover::after{
+    width: 70%;
+}
+
+
+.banner{
+    height: 90vh;
+    width: 100%;
+    background-image: url('/images/bg.png');
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+}
+.banner h1{
+    font-size: 45px;
+    margin: 30px 0px;
+    font-family: poppins;
+    text-transform: capitalize;
+    text-align: center;
+}
+.banner img{
+    position: absolute;
+}
+.banner .img1{
+    left: 80px;
+    bottom: 40px;
+    height: 230px;
+    width: 240px;
+    transform: rotate(-20deg);
+}
+.banner .img2{
+    left: 35%;
+    bottom: 25%;
+    height: 270px;
+    width: 400px;
+
+}
+.banner .img3{
+    right: 40px;
+    bottom: 12%;
+    height: 250px;
+    width: 330px;
+    transform: rotate(20deg);
+}
+
+.about{
+    padding: 20px;
+    min-height: 90vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: poppins;
+}
+.about .card-hover{
+    transition: .3s;
+}
+.about .card-hover:hover{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    cursor: pointer;
+}
+.about .title{
+    color: #fff;
+    padding: 20px;
+    width: 90%;
+    border-radius: 4px;
+    background-color: #54a0ff;
+}
+
+.about .project{
+    margin: 20px;
+    padding: 20px;
+    width: 90%;
+    border-radius: 4px;
+}
+.project ul{
+    padding: 10px;
+}
+.about .mentor{
+    margin: 20px;
+    padding: 20px;
+    width: 90%;
+    background: #feca57;
+    border-radius: 4px;
+}
+.about .member{
+    margin: 20px;
+    padding: 20px;
+    width: 90%;
+    border-radius: 4px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.member table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.member table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #0077ff;
+    color: white;
+}
+
+/* feedback */
+.feedback{
+    padding: 20px;
+    min-height: 90vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: poppins;
+}
+.feedback h2 {
+    text-align: center;
+    color: #0077ff;
+    margin-bottom: 20px;
+}
+.feedback form{
+    background-color: #c8d6e5;
+    padding: 20px;
+    font-family: poppins;
+    border-radius: 5px;
+}
+.feedback label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    font-family: poppins;
+}
+.feedback input, select, textarea {
+    width: 100%;
+    font-family: poppins;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+}
+.feedback textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: poppins;
+}
+.feedback button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0077ff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-family: poppins;
+}
+
+
+/* service page design  */
+.service{
+    font-family: poppins;
+    min-height: 90vh;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.service h1{
+    font-size: 40px;
+    text-transform: capitalize;
+}
+.service p{
+    letter-spacing: 2px;
+    padding: 10px;
+}
+.service .form-div{
+    margin: 10px 0px;
+    padding: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-div input{
+    padding: 10px;
+    height: 50px;
+    width: 480px;
+    border: 2px solid pink;
+    outline: none;
+    font-size: 15px;
+    font-family: poppins;
+    border-radius: 2px;
+}
+.form-div button{
+    font-family: poppins;
+    margin: 0px 5px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 2px;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+}
+.output-container{
+    height: auto;
+    width: 90%;
+    background-color: #ebe1e1;
+    border-radius: 3px;
+    padding: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.shop-card{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+    transition: .3s;
+    margin: 20px 10px;
+}
+.shop-card .logo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.shop-card .logo img{
+    height: 50px;
+    width: 150px;
+    
+}
+.shop-card h4{
+    padding: 10px;
+    color: blueviolet;
+}
+.shop-card .tags{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.tags span{
+    background-color: gainsboro;
+    text-transform: capitalize;
+    margin: 7px 8px;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.shop-card:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    cursor: pointer;
+}
+.footer{
+    height: 10vh;
+    width: 100%;
+    color: #fff;
+    text-transform: capitalize;
+    background: #2c3e50;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
