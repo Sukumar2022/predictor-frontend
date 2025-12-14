@@ -26,6 +26,7 @@
 .nav-Link{
     margin: 0px 40px;
     padding: 2px;
+    transition: .3s;
 }
 .nav-Link ul{
     display: flex;
@@ -58,7 +59,16 @@
 .nav-Link ul li:hover::after{
     width: 70%;
 }
-
+#menuBtn{
+    display: none;
+}
+#closeBtn{
+    position: absolute;
+    top: 35px;
+    right: 20%;
+    font-size: 35px;
+    display: none;
+}
 
 .banner{
     height: 90vh;
@@ -95,6 +105,7 @@
 
 }
 .banner .img3{
+    position: absolute;
     right: 40px;
     bottom: 12%;
     height: 250px;
@@ -251,6 +262,7 @@ th {
     display:flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .form-div input{
     padding: 10px;
@@ -337,4 +349,175 @@ th {
     justify-content: center;
     align-items: center;
     font-family: poppins;
+}
+@media (max-width:900px) {
+    .banner .img1 {
+        left: 29px;
+        bottom: 143px;
+        height: 220px;
+        width: 240px;
+    }
+    .banner .img2 {
+        left: 28%;
+        bottom: 33%;
+        height: 261px;
+        width: 400px;
+    }    
+    .banner .img3 {
+        right: 45px;
+        bottom: 2%;
+        height: 220px;
+        width: 310px;
+        transform: rotate(20deg);
+    }    
+}
+@media (max-width:640px) {
+    #menuBtn{
+        display: block;
+        font-size: 30px;
+    }
+    #closeBtn{
+        display: block;
+    }
+    #navMenu{
+        position: fixed;
+        top: -900px;
+        left: 0;
+        background-color: #dfdee6;
+        height: 100vh;
+        width: 100%;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .nav-Link ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-Link ul li{
+        font-size: 28px;
+    }
+    .nav-Link ul li::after{
+        display: none;
+    }
+    .banner h1 {
+        font-size: 54px;
+        margin: 30px 0px;
+        font-family: poppins;
+        text-transform: capitalize;
+        text-align: center;
+        line-height: 83px;
+    }
+    .banner .img2 {
+        left: 24%;
+        bottom: 36%;
+        height: 218px;
+        width: 327px;
+    }
+    .banner .img1 {
+        left: 0px;
+        bottom: 18px;
+        height: 220px;
+        width: 240px;
+    }
+}
+
+@media (max-width:430px) {
+    .nav-Link{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #a58888;
+        height: 100vh;
+        width: 100%;
+        z-index: 99;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .nav-Link ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-Link ul li{
+        font-size: 28px;
+    }
+    .nav-Link ul li::after{
+        display: none;
+    }
+    .banner h1{
+        line-height: 90px;
+    }
+    .banner .img1 {
+        left: -2px;
+        bottom: 385px;
+        height: 115px;
+        width: 140px;
+    }
+    .banner .img2 {
+        left: 4%;
+        bottom: 6%;
+        height: 238px;
+        width: 400px;
+    }
+    .banner .img3 {
+        right: 16px;
+        bottom: 62%;
+        height: 101px;
+        width: 142px;
+    }
+}
+@media (max-width:430px) {
+    .nav-Link{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #a58888;
+        height: 100vh;
+        width: 100%;
+        z-index: 99;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .nav-Link ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-Link ul li{
+        font-size: 28px;
+    }
+    .nav-Link ul li::after{
+        display: none;
+    }
+    .banner h1{
+        line-height: 95px;
+    }
+    .banner .img1 {
+        left: -2px;
+        bottom: 68%;
+        height: 115px;
+        width: 140px;
+    }
+    .banner .img2 {
+        left: 4%;
+        bottom: 10%;
+        height: 238px;
+        width: 400px;
+    }
+    .banner .img3 {
+        right: 14px;
+        bottom: 69%;
+        height: 101px;
+        width: 142px;
+    }
+    .form-div input{
+        height: 60px; 
+        width: 340px;
+    }
+    .form-div button{
+        margin: 10px 0px;
+    }
 }

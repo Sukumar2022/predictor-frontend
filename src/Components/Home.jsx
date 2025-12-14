@@ -20,7 +20,7 @@ const Home = () => {
     });
     t2.from(".img2", {
       duration: 1.2,
-      y: -400,
+      y: -800,
       scale: 0.1,
     });
     t2.from(".img3", {
@@ -33,7 +33,7 @@ const Home = () => {
     <>
       <div className="banner">
         <h1>
-          Find the best store <br /> for your product
+          Find the best store <br /> for your products
         </h1>
         <img className="img1" src="images/img2.png" alt="" srcset="" />
         <img className="img2" src="images/img3.png" alt="" srcset="" />
