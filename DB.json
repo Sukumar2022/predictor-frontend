@@ -1,0 +1,18 @@
+{
+  "ranking": [
+    {
+      "id": 1,
+      "eshop": "Amazon",
+      "average_score": 0.5331432999020001,
+      "review_count": 568425,
+      "weighted_score": 0.5334086079142212
+    },
+    {
+      "id": 2,
+      "eshop": "Flipkart",
+      "average_score": 0.47937851754938277,
+      "review_count": 182089,
+      "weighted_score": 0.47936535460833174
+    }
+  ]
+}
