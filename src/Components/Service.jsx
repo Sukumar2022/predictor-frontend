@@ -3,28 +3,31 @@ import axios from "axios";
 
 const Service = () => {
   const [rankings, setRankings] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState("");
+  const [error, setError] = useState("");
 
-  // Fetch ranking data from json-server
   useEffect(() => {
+    if (!selectedProduct) return;
+
+    setLoading(true);
+    setError("");
+
     axios
-      .get("http://localhost:5000/ranking")
+      .post("http://127.0.0.1:8000/api/ranking/", {
+        category: selectedProduct,
+      })
       .then((res) => {
         setRankings(res.data);
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error fetching ranking data:", err);
+        console.error(err);
+        setError("Failed to fetch ranking data");
         setLoading(false);
       });
-  }, []);
+  }, [selectedProduct]);
 
-  if (loading) {
-    return <p style={{ textAlign: "center" }}>Loading ranking data...</p>;
-  }
-
-  // Find best platform
   const bestPlatform =
     rankings.length > 0
       ? [...rankings].sort(
@@ -34,31 +37,31 @@ const Service = () => {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.heading}>
-        E-Shop Advisor — Platform Ranking
-      </h1>
-
-      {/* Product Select */}
+      <h1 style={styles.heading}>E-Shop Advisor — Platform Ranking</h1>
       <div style={styles.searchBox}>
         <select
+          name="category"
           style={styles.select}
           value={selectedProduct}
           onChange={(e) => setSelectedProduct(e.target.value)}
         >
           <option value="">-- Choose Category --</option>
-          <option value="product">Product</option>
+          <option value="electronic">Electronic</option>
         </select>
       </div>
+      {loading && <p style={styles.center}>Loading ranking data...</p>}
 
-      {/* Show result ONLY after product selection */}
-      {selectedProduct &&
+      {error && <p style={styles.error}>{error}</p>}
+
+      {!loading &&
+        !error &&
         rankings.map((item) => (
           <div
-            key={item.id}
+            key={item.eshop}
             style={{
               ...styles.card,
               border:
-                item.eshop === bestPlatform.eshop
+                item.eshop === bestPlatform?.eshop
                   ? "3px solid green"
                   : "1px solid #ccc",
             }}
@@ -67,20 +70,20 @@ const Service = () => {
 
             <p>
               <strong>Average Score:</strong>{" "}
-              {item.average_score.toFixed(3)}
+              {Number(item.average_score).toFixed(3)}
             </p>
 
             <p>
               <strong>Total Reviews:</strong>{" "}
-              {item.review_count.toLocaleString()}
+              {Number(item.review_count).toLocaleString()}
             </p>
 
             <p>
               <strong>Weighted Score:</strong>{" "}
-              {item.weighted_score.toFixed(3)}
+              {Number(item.weighted_score).toFixed(3)}
             </p>
 
-            {item.eshop === bestPlatform.eshop && (
+            {item.eshop === bestPlatform?.eshop && (
               <p style={styles.badge}>🏆 Best Platform</p>
             )}
           </div>
@@ -125,5 +128,12 @@ const styles = {
     marginTop: "10px",
     color: "green",
     fontWeight: "bold",
+  },
+  center: {
+    textAlign: "center",
+  },
+  error: {
+    color: "red",
+    textAlign: "center",
   },
 };
